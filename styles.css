@@ -162,8 +162,8 @@ button { font: inherit; }
 .bloom { --bloom: 120px; position: relative; width: var(--bloom); height: var(--bloom); display: inline-grid; place-items: center; }
 .bloom-petals { position: absolute; inset: 0; animation: bloomspin 52s linear infinite; }
 .bloom-petals i { position: absolute; left: 50%; bottom: 50%; width: 31%; height: 48%; margin-left: calc(var(--bloom) * -0.155);
-  background: linear-gradient(180deg, #fff, var(--peach)); border-radius: 50% 50% 46% 46% / 62% 62% 38% 38%;
-  transform-origin: 50% 100%; transform: rotate(var(--r)); box-shadow: 0 3px 9px -6px rgba(120, 80, 30, .35); }
+  background: linear-gradient(168deg, #FFFFFF 5%, #FCE2BE 50%, #F0BD72 100%); border-radius: 50% 50% 46% 46% / 62% 62% 38% 38%;
+  transform-origin: 50% 100%; transform: rotate(var(--r)); box-shadow: 0 4px 10px -4px rgba(115, 78, 22, .42); }
 .bloom-center { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; width: 46%; height: 46%; border-radius: 50%;
   background: linear-gradient(150deg, var(--gold-light), var(--gold) 50%, var(--gold-deep)); display: grid; place-items: center;
   box-shadow: 0 8px 18px -8px rgba(214, 133, 31, .6); }
@@ -181,8 +181,6 @@ button { font: inherit; }
 .calc-badge .bloom { --bloom: 88px; filter: drop-shadow(0 10px 16px rgba(110, 75, 25, .26)); }
 .calc-badge .bloom::before { content: ""; position: absolute; inset: -16%; z-index: -1; border-radius: 50%; filter: blur(16px);
   background: radial-gradient(circle, rgba(243, 199, 130, .55), transparent 66%); }
-/* badge petals need contrast on the light calculator card (CTA bloom stays white) */
-.calc-badge .bloom-petals i { background: linear-gradient(170deg, #FFFFFF 6%, #F2BE76 100%); box-shadow: 0 3px 8px -3px rgba(120, 80, 25, .45); }
 .mini-result { margin-top: 1.4rem; padding-top: 1.3rem; border-top: 1px solid var(--line); }
 .mini-figure { display: flex; align-items: baseline; gap: .25rem; }
 .mini-num { font-family: var(--font-display); font-weight: 700; font-size: 2.3rem; color: var(--gold-deep); letter-spacing: -0.02em; line-height: 1; }
