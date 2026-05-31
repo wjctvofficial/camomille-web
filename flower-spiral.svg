@@ -1,11 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
   <!--
-    Camomille bloom — fully editable, nothing flattened.
-    - #petals: 8 separate petal <path>s (rotated copies), filled by the #petalFill gradient
+    Camomille bloom (SPIRAL) — stylized variant: ellipse petals with a gentle pinwheel lean
+    and a soft gold edge so the bloom reads on light backgrounds. Fully editable, nothing flattened.
+    Sibling option: flower-classic.svg (exact site match, straight dome petals, no edge).
+    - #petals: 8 separate <ellipse> petals (rotated copies) + the 16-deg spiral lean, filled by #petalFill
     - #center: the gold disc (#centerFill gradient)
     - #logo: the Camomille mark as 3 paths, white
     - Gradients live in <defs>; #bloomShadow is the soft depth (delete to flatten).
-    Petal gradient is per-petal (objectBoundingBox), so each goes white at the tip -> gold at the base.
   -->
   <defs>
     <linearGradient id="petalFill" x1="0" y1="0" x2="0" y2="1">
