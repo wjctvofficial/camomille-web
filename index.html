@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Camomille — Custom web apps, with deferred payment</title>
+  <meta name="description" content="Your custom web application, with deferred payment and no commitment. No billing before your app is online. Lease it over 6, 12, 18, or 24 months." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#FBF7F0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Camomille — Custom web apps, with deferred payment" />
+  <meta property="og:description" content="Custom web apps with deferred payment and no commitment. No billing until your app is live, then lease it over 6 to 24 months." />
+  <meta property="og:locale" content="en" />
+  <meta property="og:locale:alternate" content="fr" />
+  <meta name="twitter:card" content="summary" />
+  <link rel="alternate" hreflang="en" href="./" />
+  <link rel="alternate" hreflang="fr" href="fr/" />
+</head>
+<body id="top">
+
+  <!-- icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="glyph" viewBox="0 0 96.002 96">
+      <path fill="currentColor" fill-rule="evenodd" transform="translate(0 42)" d="M32 0.750462L32 5.5244Q32 5.63432 31.9736 5.74101Q31.9471 5.8477 31.8958 5.94489Q31.8444 6.04207 31.7711 6.12404Q31.6979 6.206 31.6071 6.26793L10.393 20.7321Q10.3021 20.794 10.2289 20.876Q10.1556 20.9579 10.1043 21.0551Q10.0529 21.1523 10.0265 21.259Q10 21.3657 10 21.4756L10 22.5881Q10 22.6851 10.0206 22.7798Q10.0413 22.8745 10.0816 22.9626Q10.122 23.0508 10.1802 23.1283Q10.2383 23.2058 10.3117 23.2692L31.7467 41.7812Q31.8692 41.887 32.021 41.9435Q32.1729 42 32.3348 42L36 42L32 54L0.119366 22.6175Q0.0620939 22.5611 0.0310478 22.487Q0 22.4129 0 22.3325L0 21.7131Q0 21.6132 0.0469801 21.525Q0.0939599 21.4369 0.176882 21.3811L31.3771 0.418526Q31.4482 0.379574 31.5261 0.357471Q31.6068 0.349702 31.6871 0.360139Q31.7643 0.384813 31.834 0.426098Q31.8952 0.479214 31.943 0.544653Q31.9783 0.617598 31.9964 0.696579Q32 0.723397 32 0.750462Z" />
+      <path fill="currentColor" fill-rule="evenodd" transform="translate(60.002 0)" d="M36 31.6675L36 32.2869Q36 32.3868 35.953 32.475Q35.906 32.5631 35.8231 32.6188L4.62296 53.5815Q4.55191 53.6204 4.47395 53.6426Q4.3933 53.6503 4.31294 53.6399Q4.23576 53.6152 4.16604 53.5739Q4.10485 53.5208 4.05706 53.4554Q4.02178 53.3824 4.00368 53.3034Q4.00004 53.2766 4.00004 53.2496L4.00003 48.4756Q4.00003 48.3657 4.02649 48.259Q4.05295 48.1523 4.10431 48.0551Q4.15567 47.9579 4.22892 47.876Q4.30216 47.794 4.39298 47.7321L25.6071 33.2679Q25.6979 33.206 25.7711 33.124Q25.8444 33.0421 25.8958 32.9449Q25.9471 32.8477 25.9736 32.741Q26 32.6343 26 32.5244L26 31.4119Q26 31.3149 25.9794 31.2202Q25.9587 31.1255 25.9184 31.0374Q25.878 30.9492 25.8199 30.8717Q25.7617 30.7942 25.6883 30.7308L4.2534 12.2188Q4.13081 12.113 3.979 12.0565Q3.82719 12 3.66521 12L0 12L4.00002 0L35.8806 31.3825Q35.9379 31.4389 35.9689 31.513Q36 31.5871 36 31.6675Z" />
+      <path fill="currentColor" fill-rule="evenodd" transform="translate(32.002 0)" d="M11.2683 96C8.31138 96 0 96 0 96C0 96 17.8085 10.5194 19.8165 0.880987C19.9178 0.394431 20.4029 0 20.8999 0C23.6886 0 32 0 32 0L12.1492 95.2836Q12.1335 95.359 12.1053 95.4306Q12.077 95.5022 12.037 95.568Q11.9969 95.6337 11.9463 95.6917Q11.8957 95.7497 11.836 95.7983Q11.7763 95.8469 11.7092 95.8846Q11.642 95.9223 11.5695 95.9481Q11.497 95.9739 11.4211 95.9869Q11.3452 96 11.2683 96Z" />
+    </symbol>
+    <symbol id="ic-arrow" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M12.5 6l6 6-6 6"/></g></symbol>
+    <symbol id="ic-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.6l1.9 5.5 5.5 1.9-5.5 1.9L12 17.4l-1.9-5.5L4.6 10l5.5-1.9L12 2.6Z"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></g></symbol>
+    <symbol id="ic-grid" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/></g></symbol>
+    <symbol id="ic-clipboard" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="16.5" rx="2.5"/><path d="M9 4.5a3 3 0 0 1 6 0"/><path d="M8.5 11h7M8.5 15h5"/></g></symbol>
+    <symbol id="ic-pen" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 4.5l3 3L9 18l-4 1 1-4 10.5-10.5Z"/><path d="M14.5 6.5l3 3"/></g></symbol>
+    <symbol id="ic-code" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l4-6-4-6"/><path d="M8 6l-4 6 4 6"/></g></symbol>
+    <symbol id="ic-rocket" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 15c-1.2 1-1.6 4.2-1.6 4.2s3.2-.4 4.2-1.6"/><path d="M9 14c.8-3.2 4.5-8 9-9 .5 4.5-3 9-9 11l-2-2Z"/><circle cx="14.5" cy="9.5" r="1.4"/></g></symbol>
+    <symbol id="ic-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.3-3 7.4-7 8.5-4-1.1-7-4.2-7-8.5V6l7-3Z"/><path d="M9 12l2 2 4-4"/></g></symbol>
+    <symbol id="ic-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4.5 13.2c-.4.5 0 1.3.7 1.3H11l-1 7.5 8.5-11.2c.4-.5 0-1.3-.7-1.3H12l1-7.3Z"/></symbol>
+    <symbol id="ic-expand" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H5v4M15 5h4v4M15 19h4v-4M9 19H5v-4"/></g></symbol>
+    <symbol id="ic-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9Z"/></g></symbol>
+    <symbol id="ic-menu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></g></symbol>
+    <symbol id="ic-chevron" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></g></symbol>
+    <symbol id="ic-server" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="7" rx="2.2"/><rect x="3.5" y="13" width="17" height="7" rx="2.2"/><path d="M7.5 7.5h.01M7.5 16.5h.01"/></g></symbol>
+    <symbol id="ic-activity" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></g></symbol>
+    <symbol id="ic-key" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15.5" r="4.5"/><path d="M11.2 12.3 20 3.5"/><path d="m16.5 7 3 3"/><path d="m19 4.5 2.5 2.5"/></g></symbol>
+    <symbol id="ic-users" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.3"/><path d="M3.5 19.5a5.5 5.5 0 0 1 11 0"/><path d="M16 5.1a3.3 3.3 0 0 1 0 6.3"/><path d="M17.5 13.6a5.5 5.5 0 0 1 3 5.9"/></g></symbol>
+    <symbol id="ic-trend" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16l5-5 3 3 7-7"/><path d="M15 7h5v5"/></g></symbol>
+    <symbol id="ic-bulb" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.4.9 1.1.9 1.8v.3h5.2v-.3c0-.7.3-1.4.9-1.8A6 6 0 0 0 12 3Z"/></g></symbol>
+    <symbol id="ic-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a4 4 0 0 0 5.7.3l2.3-2.3a4 4 0 0 0-5.7-5.7L11 6.6"/><path d="M14 11a4 4 0 0 0-5.7-.3L6 13a4 4 0 0 0 5.7 5.7L13 17.4"/></g></symbol>
+  </svg>
+
+  <!-- ambient background -->
+  <div class="aurora" aria-hidden="true"></div>
+
+  <!-- nav -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Camomille home">
+        <svg class="brand-glyph" aria-hidden="true"><use href="#glyph"/></svg>
+        <span class="brand-name">Camomille</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a class="nav-link is-active" href="#top">Home</a>
+        <a class="nav-link" href="#work">Services</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+        <span class="nav-divide" aria-hidden="true"></span>
+        <a class="lang" href="fr/" aria-label="Passer en français" hreflang="fr">
+          <svg aria-hidden="true"><use href="#ic-globe"/></svg><span class="lang-code">FR</span>
+        </a>
+        <a class="btn btn-primary btn-sm nav-cta" href="https://calendar.app.google/yPcUiXpPFXHyGDNo6" target="_blank" rel="noopener">Schedule a meeting</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg aria-hidden="true"><use href="#ic-menu"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- hero -->
+    <section class="hero">
+      <div class="ribbon" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow reveal" style="--d:0">
+            <svg aria-hidden="true"><use href="#ic-spark"/></svg>
+            Web development, in leasing
+          </span>
+          <h1 class="hero-title reveal" style="--d:1">
+            Custom web apps, built before you pay.
+            <span class="muted">Deferred payment. Zero commitment.</span>
+          </h1>
+          <p class="hero-sub reveal" style="--d:2">
+            No billing until your app is live. Then lease it over 6, 12, 18, or 24 months.
+            Not happy along the way? You walk away owing nothing.
+          </p>
+          <div class="hero-actions reveal" style="--d:3">
+            <a class="btn btn-primary btn-lg" href="https://calendar.app.google/yPcUiXpPFXHyGDNo6" target="_blank" rel="noopener">
+              Schedule a meeting
+              <svg aria-hidden="true"><use href="#ic-arrow"/></svg>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
+          </div>
+          <ul class="trust reveal" style="--d:4">
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg> €0 upfront</li>
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg> Pay over 6&ndash;24 months</li>
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg> Pause anytime</li>
+          </ul>
+        </div>
+
+        <!-- hero mini calculator -->
+        <div class="hero-calc reveal" style="--d:2">
+          <div class="calc mini-calc" data-calc role="group" aria-label="Estimate your build">
+            <span class="calc-badge" aria-hidden="true">
+              <span class="bloom">
+                <span class="bloom-petals"><i style="--r:0deg"></i><i style="--r:45deg"></i><i style="--r:90deg"></i><i style="--r:135deg"></i><i style="--r:180deg"></i><i style="--r:225deg"></i><i style="--r:270deg"></i><i style="--r:315deg"></i></span>
+                <span class="bloom-center"><svg class="tile-glyph"><use href="#glyph"/></svg></span>
+              </span>
+            </span>
+            <div class="calc-head">
+              <div>
+                <span class="calc-kicker">Estimate your build</span>
+                <span class="calc-sub">Leasing, paid monthly</span>
+              </div>
+            </div>
+
+            <div class="calc-cost">
+              <span class="calc-label">Project cost</span>
+              <span class="calc-value js-cost">€24,000</span>
+            </div>
+            <input class="calc-range" type="range" min="8000" max="60000" step="1000" value="24000" autocomplete="off" aria-label="Project cost" />
+
+            <span class="calc-label calc-label-tight">Pay over</span>
+            <div class="calc-terms" role="group" aria-label="Payment term">
+              <button type="button" data-m="0">One&#8209;time</button>
+              <button type="button" data-m="6">6</button>
+              <button type="button" data-m="12" class="is-on">12</button>
+              <button type="button" data-m="18">18</button>
+              <button type="button" data-m="24">24</button>
+            </div>
+
+            <div class="mini-result">
+              <div class="mini-figure"><span class="js-build mini-num">€2,000</span><span class="js-buildunit mini-unit"> / month</span></div>
+              <span class="mini-sub"><span class="js-term">for 12 months</span> &middot; care &amp; hosting from €200/mo</span>
+              <span class="calc-when">Billed once your build is complete and live.</span>
+            </div>
+            <a class="mini-link" href="#pricing">Configure care &amp; hosting &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- trust / logo strip -->
+    <section class="strip reveal">
+      <div class="container strip-inner">
+        <span class="strip-label">The honest way to ship software</span>
+        <div class="strip-items">
+          <span>Founders</span>
+          <span>Agencies</span>
+          <span>SaaS teams</span>
+          <span>Local business</span>
+          <span>Non&#8209;profits</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- bento: built end to end -->
+    <section class="bento" id="work">
+      <div class="container">
+        <header class="sec-head reveal">
+          <h2 class="sec-title">Built end to end.<span class="muted"> On your terms.</span></h2>
+          <p class="sec-lead">From the first wireframe to a deployed, scalable app. You approve every step, and you only start paying once it is live.</p>
+        </header>
+
+        <div class="bento-grid">
+          <!-- big card: real app -->
+          <article class="bento-card span-2 reveal">
+            <button class="card-expand" aria-label="Expand"><svg aria-hidden="true"><use href="#ic-expand"/></svg></button>
+            <div class="bento-text">
+              <h3>A real, scalable web app</h3>
+              <p>Designed and developed around your business, thoroughly tested, and deployed the moment you approve.</p>
+            </div>
+            <div class="mock-browser" aria-hidden="true">
+              <div class="mb-bar"><span></span><span></span><span></span><div class="mb-url">app.camomille.dev</div></div>
+              <div class="mb-body">
+                <div class="mb-side">
+                  <div class="mb-logo"></div>
+                  <div class="mb-nav on"></div>
+                  <div class="mb-nav"></div>
+                  <div class="mb-nav"></div>
+                  <div class="mb-nav"></div>
+                </div>
+                <div class="mb-main">
+                  <div class="mb-stats">
+                    <div class="mb-stat"><span class="mb-k">Revenue</span><span class="mb-v">€48.2k</span><span class="mb-up">+12%</span></div>
+                    <div class="mb-stat"><span class="mb-k">Active users</span><span class="mb-v">3,910</span><span class="mb-up">+6%</span></div>
+                  </div>
+                  <div class="mb-chart">
+                    <i style="--h:38%"></i><i style="--h:55%"></i><i style="--h:42%"></i><i style="--h:70%"></i>
+                    <i style="--h:60%"></i><i style="--h:85%"></i><i style="--h:72%"></i><i style="--h:96%"></i>
+                    <i style="--h:64%"></i><i style="--h:80%"></i><i style="--h:90%"></i><i style="--h:100%"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- approve -->
+          <article class="bento-card reveal">
+            <button class="card-expand" aria-label="Expand"><svg aria-hidden="true"><use href="#ic-expand"/></svg></button>
+            <div class="bento-text">
+              <h3>You approve every step</h3>
+              <p>Nothing ships without your sign&#8209;off.</p>
+            </div>
+            <div class="mock-approve" aria-hidden="true">
+              <div class="ma-row done"><span class="ma-tick"><svg><use href="#ic-check"/></svg></span> Discovery &amp; spec</div>
+              <div class="ma-row done"><span class="ma-tick"><svg><use href="#ic-check"/></svg></span> Mockup approved</div>
+              <div class="ma-row live"><span class="ma-dot"></span> Build in progress</div>
+            </div>
+          </article>
+
+          <!-- launch -->
+          <article class="bento-card reveal">
+            <button class="card-expand" aria-label="Expand"><svg aria-hidden="true"><use href="#ic-expand"/></svg></button>
+            <div class="bento-text">
+              <h3>Live in days, not quarters</h3>
+              <p>Immediate deployment the moment you are happy.</p>
+            </div>
+            <div class="mock-deploy" aria-hidden="true">
+              <span class="md-pill"><span class="md-led"></span> Deployed</span>
+              <div class="md-line"><svg><use href="#ic-bolt"/></svg> Build passed in 41s</div>
+              <div class="md-line"><svg><use href="#ic-globe"/></svg> Live on your domain</div>
+            </div>
+          </article>
+
+          <!-- code is yours -->
+          <article class="bento-card span-2 reveal">
+            <button class="card-expand" aria-label="Expand"><svg aria-hidden="true"><use href="#ic-expand"/></svg></button>
+            <div class="bento-split">
+              <div class="bento-text">
+                <h3>When it is paid, the code is yours</h3>
+                <p>Own everything, free and clear. No lock&#8209;in, no hostage fees, no surprises.</p>
+              </div>
+              <div class="mock-code" aria-hidden="true">
+                <div class="mc-top"><span></span><span></span><span></span></div>
+                <pre><span class="t-c">// ownership.ts</span>
+<span class="t-k">export const</span> owner = <span class="t-s">"you"</span>;
+<span class="t-k">const</span> license = <span class="t-s">"all rights"</span>;
+<span class="t-k">return</span> { owner, license };</pre>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- process -->
+    <section class="process" id="how">
+      <div class="container">
+        <header class="sec-head reveal">
+          <h2 class="sec-title">From idea to launch.<span class="muted"> Four clear steps.</span></h2>
+          <p class="sec-lead">The same trusted production cycle as the best studios. The difference: you pay nothing before the operation phase.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal" style="--d:0">
+            <span class="step-ico"><svg aria-hidden="true"><use href="#ic-clipboard"/></svg></span>
+            <span class="step-n">01</span>
+            <h3>Product</h3>
+            <p>Analysis, specification, and an initial navigation plan for your app.</p>
+          </li>
+          <li class="step reveal" style="--d:1">
+            <span class="step-ico"><svg aria-hidden="true"><use href="#ic-pen"/></svg></span>
+            <span class="step-n">02</span>
+            <h3>Mockup</h3>
+            <p>A full mockup, aligned to your brand and visual identity.</p>
+          </li>
+          <li class="step reveal" style="--d:2">
+            <span class="step-ico"><svg aria-hidden="true"><use href="#ic-code"/></svg></span>
+            <span class="step-n">03</span>
+            <h3>Development</h3>
+            <p>Custom, scalable development, delivered in regular pieces and thoroughly tested.</p>
+          </li>
+          <li class="step reveal" style="--d:3">
+            <span class="step-ico"><svg aria-hidden="true"><use href="#ic-rocket"/></svg></span>
+            <span class="step-n">04</span>
+            <h3>Launch</h3>
+            <p>Deployment, hosting, and maintenance. Now, and only now, payment begins.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- quality -->
+    <section class="quality" id="quality">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="eyebrow"><svg aria-hidden="true"><use href="#ic-shield"/></svg> Built to last</span>
+          <h2 class="sec-title">More than a build.<span class="muted"> Everything that keeps it solid.</span></h2>
+          <p class="sec-lead">A clean launch is only the start. We build for security, scale, and a clean handover whenever you want one.</p>
+        </header>
+
+        <div class="quality-grid">
+          <article class="q-item reveal" style="--d:0">
+            <span class="q-ico"><svg aria-hidden="true"><use href="#ic-shield"/></svg></span>
+            <h3>Security</h3>
+            <p>Regular security and intrusion testing, throughout development and every evolution.</p>
+          </article>
+          <article class="q-item reveal" style="--d:1">
+            <span class="q-ico"><svg aria-hidden="true"><use href="#ic-server"/></svg></span>
+            <h3>Reliable hosting</h3>
+            <p>Two options: budget-friendly managed hosting, or fully managed with 24/7 monitoring and backups.</p>
+          </article>
+          <article class="q-item reveal" style="--d:2">
+            <span class="q-ico"><svg aria-hidden="true"><use href="#ic-activity"/></svg></span>
+            <h3>Load testing</h3>
+            <p>We simulate heavy traffic so your app stays fast and steady, even during peak periods.</p>
+          </article>
+          <article class="q-item reveal" style="--d:0">
+            <span class="q-ico"><svg aria-hidden="true"><use href="#ic-trend"/></svg></span>
+            <h3>Evolution in leasing</h3>
+            <p>Want new features later? The cost is simply added to your monthly payment, and you can always say no.</p>
+          </article>
+          <article class="q-item reveal" style="--d:1">
+            <span class="q-ico"><svg aria-hidden="true"><use href="#ic-key"/></svg></span>
+            <h3>Yours to keep</h3>
+            <p>Built on well-documented tech, with a half-day handover to your team. We can even help you hire and train.</p>
+          </article>
+          <article class="q-item reveal" style="--d:2">
+            <span class="q-ico"><svg aria-hidden="true"><use href="#ic-users"/></svg></span>
+            <h3>An active partner</h3>
+            <p>Need a product and technical expert in the room? We join the meetings that matter.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- pricing -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <header class="sec-head reveal">
+          <span class="eyebrow"><svg aria-hidden="true"><use href="#ic-spark"/></svg> Pricing</span>
+          <h2 class="sec-title">Pricing that waits for you.<span class="muted"> Pay once it is live.</span></h2>
+          <p class="sec-lead">No deposit, and no milestones billed in advance. When your app is online and approved, you lease it over 6 to 24 months, for less than the monthly cost of a CTO. When it is paid, it is yours.</p>
+        </header>
+
+        <div class="price-grid">
+          <article class="price-card reveal" style="--d:0">
+            <span class="price-ico"><svg aria-hidden="true"><use href="#ic-shield"/></svg></span>
+            <h3>The build</h3>
+            <p class="price-big">€0<span> today</span></p>
+            <p>Pay nothing until your app is live. Not happy along the way? Walk away owing nothing.</p>
+          </article>
+
+          <article class="price-card featured reveal" style="--d:1">
+            <span class="price-tag">The core offer</span>
+            <span class="price-ico"><svg aria-hidden="true"><use href="#ic-spark"/></svg></span>
+            <h3>The lease</h3>
+            <p class="price-big">€1,500<span> + / mo</span></p>
+            <p>Spread the cost over 6, 12, 18, or 24 months. Lower than a senior developer. When the payments finish, the code is yours.</p>
+          </article>
+
+          <article class="price-card reveal" style="--d:2">
+            <span class="price-ico"><svg aria-hidden="true"><use href="#ic-key"/></svg></span>
+            <h3>Yours to own</h3>
+            <p class="price-big">€0<span> to own</span></p>
+            <p>When the payments finish, the code and everything in it is yours. No buy-out, no lock-in.</p>
+          </article>
+        </div>
+
+        <div class="calc estimator reveal" data-calc role="group" aria-label="Estimate your build">
+          <span class="calc-badge" aria-hidden="true">
+            <span class="bloom">
+              <span class="bloom-petals"><i style="--r:0deg"></i><i style="--r:45deg"></i><i style="--r:90deg"></i><i style="--r:135deg"></i><i style="--r:180deg"></i><i style="--r:225deg"></i><i style="--r:270deg"></i><i style="--r:315deg"></i></span>
+              <span class="bloom-center"><svg class="tile-glyph"><use href="#glyph"/></svg></span>
+            </span>
+          </span>
+          <div class="calc-head">
+            <div>
+              <span class="calc-kicker">Estimate your build</span>
+              <span class="calc-sub">Design + development, all in</span>
+            </div>
+          </div>
+
+          <div class="calc-cost">
+            <span class="calc-label">Project cost</span>
+            <span class="calc-value js-cost">€24,000</span>
+          </div>
+          <input class="calc-range" type="range" min="8000" max="60000" step="1000" value="24000" autocomplete="off" aria-label="Project cost" />
+
+          <div class="calc-line">
+            <div class="calc-terms" role="group" aria-label="Payment options">
+              <button type="button" data-m="0">One-time</button>
+              <button type="button" data-m="6">6</button>
+              <button type="button" data-m="12" class="is-on">12</button>
+              <button type="button" data-m="18">18</button>
+              <button type="button" data-m="24">24</button>
+            </div>
+            <div class="calc-build"><span class="js-build">€2,000</span><small class="js-buildunit"> / mo</small></div>
+          </div>
+
+          <div class="calc-options">
+            <div class="calc-group" role="group" aria-label="Maintenance">
+              <span class="calc-glabel">Maintenance</span>
+              <button type="button" class="opt is-on" data-price="150"><span class="opt-radio"></span><span class="opt-text"><span class="opt-name">Updates <b>€150/mo</b></span><span class="opt-desc">Application and security updates</span></span></button>
+              <button type="button" class="opt" data-price="500"><span class="opt-radio"></span><span class="opt-text"><span class="opt-name">Tinkerer <b>€500/mo</b></span><span class="opt-desc">Updates, plus unlimited text, colour and image changes</span></span></button>
+              <button type="button" class="opt" data-price="1000"><span class="opt-radio"></span><span class="opt-text"><span class="opt-name">Perfectionist <b>€1,000/mo</b></span><span class="opt-desc">Tinkerer, plus unlimited menu and feature changes</span></span></button>
+            </div>
+            <div class="calc-group" role="group" aria-label="Hosting">
+              <span class="calc-glabel">Hosting</span>
+              <button type="button" class="opt is-on" data-price="50"><span class="opt-radio"></span><span class="opt-text"><span class="opt-name">Managed Cloud <b>€50/mo</b></span><span class="opt-desc">Hosting, backups and security updates</span></span></button>
+              <button type="button" class="opt" data-price="200"><span class="opt-radio"></span><span class="opt-text"><span class="opt-name">Professional <b>€200/mo</b></span><span class="opt-desc">Fully managed, 24/7 support, monitoring and backups</span></span></button>
+            </div>
+          </div>
+
+          <p class="calc-fineprint">The cost of hosting can vary depending on your traffic.</p>
+
+          <div class="calc-total">
+            <div class="calc-total-main"><span class="calc-total-num js-total">€2,200</span><span class="calc-total-unit js-totalunit"> / month</span></div>
+            <span class="calc-total-sub js-totalsub">for 12 months, all in</span>
+          </div>
+          <p class="calc-when">You are billed only once the build is complete and live.</p>
+        </div>
+
+        <div class="price-cta reveal">
+          <a class="btn btn-primary btn-lg" href="https://calendar.app.google/yPcUiXpPFXHyGDNo6" target="_blank" rel="noopener">Schedule a meeting <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+          <span>No deposit. Cancel any time before launch.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- conviction -->
+    <section class="conviction" id="why">
+      <div class="container conviction-grid">
+        <div class="conviction-aside reveal">
+          <span class="eyebrow"><svg aria-hidden="true"><use href="#ic-shield"/></svg> Our conviction</span>
+          <h2 class="sec-title">The client should not carry all the risk.</h2>
+          <p class="sec-lead">In most engagements you pay a deposit, then installments, all before you ever see a working result. We thought that was backwards.</p>
+          <a class="btn btn-primary btn-lg" href="#contact">Start with zero risk <svg aria-hidden="true"><use href="#ic-arrow"/></svg></a>
+        </div>
+
+        <figure class="quote reveal">
+          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+          <blockquote>The provider has the skills and the expertise. So why shouldn&rsquo;t they take on some of the risk too?</blockquote>
+          <figcaption>That question became Camomille. <strong>Relax. We take the risk.</strong></figcaption>
+          <ul class="quote-list">
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg> You pay nothing until your project is finished.</li>
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg> Not happy? Walk away owing nothing.</li>
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg> Approved? Pay over 6, 12, 18, or 24 months.</li>
+            <li><svg aria-hidden="true"><use href="#ic-check"/></svg> A professional, scalable app for less than a senior dev.</li>
+          </ul>
+        </figure>
+      </div>
+    </section>
+
+    <!-- cta -->
+    <section class="cta" id="contact">
+      <div class="ribbon ribbon-cta" aria-hidden="true"></div>
+      <div class="container cta-inner">
+        <div class="bloom bloom-lg" aria-hidden="true">
+          <span class="bloom-petals"><i style="--r:0deg"></i><i style="--r:45deg"></i><i style="--r:90deg"></i><i style="--r:135deg"></i><i style="--r:180deg"></i><i style="--r:225deg"></i><i style="--r:270deg"></i><i style="--r:315deg"></i></span>
+          <span class="bloom-center"><svg class="tile-glyph"><use href="#glyph"/></svg></span>
+        </div>
+        <h2>Move forward with peace of mind.</h2>
+        <p>Tell us what you have in mind. No commitment, and no billing until it is live.</p>
+        <div class="hero-actions center">
+          <a class="btn btn-primary btn-lg" href="https://calendar.app.google/yPcUiXpPFXHyGDNo6" target="_blank" rel="noopener">
+            Schedule a meeting
+            <svg aria-hidden="true"><use href="#ic-arrow"/></svg>
+          </a>
+          <a class="contact" href="mailto:contact@camomille.dev">
+            <span>Contact us</span>
+            <strong>contact@camomille.dev</strong>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top" aria-label="Camomille home">
+          <svg class="brand-glyph" aria-hidden="true"><use href="#glyph"/></svg>
+          <span class="brand-name">Camomille</span>
+        </a>
+        <p>Custom web applications, delivered in leasing. Relax, we take the risk.</p>
+      </div>
+      <nav class="footer-col" aria-label="Product">
+        <h4>Product</h4>
+        <a href="#work">Services</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <nav class="footer-col" aria-label="Company">
+        <h4>Company</h4>
+        <a href="#quality">Built to last</a>
+        <a href="#why">Our conviction</a>
+        <a href="mailto:contact@camomille.dev">Contact</a>
+      </nav>
+      <nav class="footer-col" aria-label="Get started">
+        <h4>Get started</h4>
+        <a href="https://calendar.app.google/yPcUiXpPFXHyGDNo6" target="_blank" rel="noopener">Schedule a meeting</a>
+        <a href="mailto:contact@camomille.dev">contact@camomille.dev</a>
+      </nav>
+    </div>
+    <div class="container footer-base">
+      <span>© 2026 Camomille</span>
+      <span>Built before you pay. Yours when you do.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
